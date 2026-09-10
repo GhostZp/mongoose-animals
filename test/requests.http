@@ -1,0 +1,47 @@
+### Get all categories
+GET http://localhost:3000/api/v1/species
+
+### Get one category
+GET http://localhost:3000/api/v1/categories/64359c8cb133896d1ea3ecbe
+
+### Get all animals of 1 species
+GET http://localhost:3000/api/v1/animals/species/Wolf
+
+### Create category
+POST http://localhost:3000/api/v1/categories
+Content-Type: application/json
+
+{
+  "category_name": "Mammals"
+}
+
+### Update category
+PUT http://localhost:3000/api/v1/categories/6aa1438a2d69da15385417f9
+Content-Type: application/json
+
+{
+  "category_name": "Marine Mammals"
+}
+
+### Delete category
+DELETE http://localhost:3000/api/v1/categories/6aa1438a2d69da15385417f9
+
+### Find animals in an area
+GET http://localhost:3000/api/v1/animals/location?topRight=52.82,71.09&bottomLeft=-11.62,34.86
+
+### Find species in a polygon area
+POST http://localhost:3000/api/v1/species/area
+Content-Type: application/json
+
+{
+  "type": "Polygon",
+  "coordinates": [
+    [
+      [0.0, 0.0],
+      [40.0, 0.0],
+      [40.0, 70.0],
+      [0.0, 70.0],
+      [0.0, 0.0]
+    ]
+  ]
+}
